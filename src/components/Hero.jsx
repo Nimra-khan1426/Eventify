@@ -74,10 +74,11 @@ const Hero = () => {
 
       <div className="hero-content" ref={contentRef}>
         <h1>
-          Discover <span style={{ color: "purple" }}>
-            Events
-            <br /> Near</span> You!
-        </h1>
+  Discover <span style={{ color: "purple", fontStyle: "italic" }}>
+    Events
+    <br /> Near
+  </span> You!
+</h1>
         <p>
           Uncover hidden gems and exciting events nearby.<br />
           Join the fun and meet new people today

@@ -11,7 +11,6 @@ const Navbar = () => {
   const searchRef = useRef(null);
   const menuRef = useRef(null);
 
-  // Filter events based on search query
   useEffect(() => {
     if (query.trim()) {
       const filtered = eventsData.filter((event) =>
@@ -25,7 +24,6 @@ const Navbar = () => {
     }
   }, [query]);
 
-  // Close search dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -42,26 +40,47 @@ const Navbar = () => {
   }, [menuOpen]);
 
   const scrollToSection = (id) => {
+    console.log("Scrolling to:", id); 
+    
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      console.log("Element found:", id); 
+      
+      
+      const navbarHeight = 80; 
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      
       setMenuOpen(false);
       setSearchOpen(false);
       setQuery("");
       
-      // Clear any selected event when navigating to sections
+     
       window.dispatchEvent(new CustomEvent('scrollToEvent', { detail: { eventId: null } }));
+    } else {
+      console.log("Element NOT found with ID:", id);
     }
   };
 
   const handleEventClick = (eventId) => {
-    // First scroll to the events section
-    const eventsSection = document.getElementById("featured-events");
+  
+    const eventsSection = document.getElementById("events");
     if (eventsSection) {
-      eventsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      const navbarHeight = 80;
+      const elementPosition = eventsSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
     
-    // Dispatch custom event to show only the clicked event
     setTimeout(() => {
       window.dispatchEvent(new CustomEvent('scrollToEvent', { 
         detail: { eventId: eventId } 
@@ -88,9 +107,9 @@ const Navbar = () => {
 
       {/* Links */}
       <ul className={`nav-links ${menuOpen ? "active" : ""}`} ref={menuRef}>
-        <li onClick={() => scrollToSection("$home")}>Home</li>
-        <li onClick={() => scrollToSection("#events")}>Events</li>
-        <li onClick={() => scrollToSection("#contact")}>Contact</li>
+        <li onClick={() => scrollToSection("home")}>Home</li>
+        <li onClick={() => scrollToSection("events")}>Events</li>
+        <li onClick={() => scrollToSection("contact")}>Contact</li>
       </ul>
 
       {/* Right Side */}
