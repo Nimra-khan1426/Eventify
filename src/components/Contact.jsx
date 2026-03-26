@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaUser, FaEnvelope, FaPhone, FaCommentDots, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaMapMarkerAlt } from "react-icons/fa";
 import "./Contact.css";
-import { BiColor } from "react-icons/bi";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
