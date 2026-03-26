@@ -24,9 +24,9 @@ const eventsData = [
     location: "Lahore & Hasan Abdal",
     desc: "A vibrant cultural and religious festival celebrated at major Gurdwaras with food, traditional music and gatherings.",
     images: [
-      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800",
-      "https://images.unsplash.com/photo-1600359746315-119f34c1a4bb?w=800",
-      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "/assets/besakhi2.png",
+      "/assets/Baisakhi1.png",
+      "/assets/besakhi3.png",
     ],
   },
 

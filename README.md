@@ -1,75 +1,65 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Eventify - Discover Local Events
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive, single-page web application for discovering and exploring local events. This project was developed as a case study for a Web Development position, demonstrating modern front-end development skills with React, interactive UI components, and a clean, mobile-friendly design.
 
-## Available Scripts
+## ✨ Live Preview
 
-In the project directory, you can run:
+[View Live Project](eventify-yenu.vercel.app)
 
-### `npm start`
+##  Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Core Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Responsive Navigation Bar**: A top bar with logo and links to "Home," "Events," and "Contact" sections, which smoothly scroll to the relevant parts of the page.
+- **Hero Section**: An engaging hero area with the main heading "Discover Events Near You!" and a call-to-action button.
+- **Featured Events Section**: Displays a grid of 3-5 event cards. Each card includes:
+    - Event name
+    - Date and time
+    - Location
+    - Short description
+    - A "Register" button with visual feedback.
+- **Fully Responsive Design**: The layout adapts seamlessly to mobile, tablet, and desktop screen sizes.
 
-### `npm test`
+### Bonus Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Search Functionality**:
+    - A search bar in the navigation that filters the displayed events by name, location, or description.
+    - Clicking on a search result scrolls to and highlights the specific event card.
+- **Dynamic Data Loading**:
+    - Event data is loaded from a `dummy JSON` file (`eventsData.js`) using `useEffect` and a simulated network delay.
+- **Interactive UI Elements**:
+    - **Image Carousel**: Hovering over an event card cycles through multiple images for that event.
+    - **Category Filters**: A section of interactive category icons (e.g., Tech, Concerts) to discover events by type.
+    - **Contact Form**: A functional contact form with validation and an alert message upon submission.
+- **Modern Animations**: Smooth entrance animations for elements as they scroll into view.
 
-### `npm run build`
+##  Technologies & Tools
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **HTML5**: For the structure of the web page.
+- **CSS3**: Custom styling for a unique and modern look.
+- **JavaScript (ES6+)**: For interactivity and logic.
+- **React (Create React App)**: For building a component-based user interface.
+    - `useState`, `useEffect`, `useRef` Hooks for state management and side effects.
+- **React Icons**: For scalable and customizable icons (`FaCalendarAlt`, `FaSearch`, `FaUser`, etc.).
+- **Git & GitHub**: For version control and project submission.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##  How to Run the Project
 
-### `npm run eject`
+To run this project locally, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##  Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clone the repository
+git clone https://github.com/your-username/eventify.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Navigate to project directory
+cd eventify
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Install dependencies
+npm install
 
-## Learn More
+# Start development server
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# Eventify
-Uncover hidden gems and exciting events nearby. Join the fun and meet new people today
->>>>>>> 0ca19c05140a1eb7acc42ca64bfe6a21388de09f

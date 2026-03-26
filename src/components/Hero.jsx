@@ -97,7 +97,7 @@ const Hero = () => {
             className="hero-img"
           />
           <img
-            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop"
+            src="/assets/besakhi3.png"
             alt="Person 2"
             className="hero-img"
           />
