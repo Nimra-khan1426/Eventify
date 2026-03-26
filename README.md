@@ -29,7 +29,6 @@ A responsive, single-page web application for discovering and exploring local ev
     - Event data is loaded from a `dummy JSON` file (`eventsData.js`) using `useEffect` and a simulated network delay.
 - **Interactive UI Elements**:
     - **Image Carousel**: Hovering over an event card cycles through multiple images for that event.
-    - **Category Filters**: A section of interactive category icons (e.g., Tech, Concerts) to discover events by type.
     - **Contact Form**: A functional contact form with validation and an alert message upon submission.
 - **Modern Animations**: Smooth entrance animations for elements as they scroll into view.
 
