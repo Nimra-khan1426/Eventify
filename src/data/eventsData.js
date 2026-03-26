@@ -9,9 +9,9 @@ const eventsData = [
     location: "Lahore, Karachi, Rawalpindi, Multan, Peshawar",
     desc: "Pakistan’s biggest cricket tournament featuring top local & international players across multiple cities.",
     images: [
-      "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=800",
-      "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800",
-      "https://images.unsplash.com/photo-1624024237693-325a9cbb18b9?w=800",
+      "/assets/imagepsl1.png",
+      "/assets/imagepsl2.png",
+      "/assets/imagepsl3.png",
     ],
   },
 

@@ -27,19 +27,19 @@ const Footer = () => {
           <span className="ify">ify</span>
         </div>
          <div className="social-icons">
-          <a href="#" className="social-icon" aria-label="Facebook">
+          <a href="" className="social-icon" aria-label="Facebook">
             <FaFacebookF />
           </a>
-          <a href="#" className="social-icon" aria-label="Twitter">
+          <a href="" className="social-icon" aria-label="Twitter">
             <FaTwitter />
           </a>
-          <a href="#" className="social-icon" aria-label="Instagram">
+          <a href="" className="social-icon" aria-label="Instagram">
             <FaInstagram />
           </a>
-          <a href="#" className="social-icon" aria-label="LinkedIn">
+          <a href="" className="social-icon" aria-label="LinkedIn">
             <FaLinkedinIn />
           </a>
-          <a href="#" className="social-icon" aria-label="YouTube">
+          <a href="" className="social-icon" aria-label="YouTube">
             <FaYoutube />
           </a>
         </div>
