@@ -83,7 +83,7 @@ const Hero = () => {
           Uncover hidden gems and exciting events nearby.<br />
           Join the fun and meet new people today
         </p>
-        <a href="#" className="hero-btn">
+        <a href="events" className="hero-btn">
           Discover Events
         </a>
       </div>
@@ -92,12 +92,12 @@ const Hero = () => {
         {/* Left side images */}
         <div className="left-images" ref={leftImagesRef}>
           <img
-            src="/assets/imagepsl1.png"
+            src="/assets/purple1.png"
             alt="Person 1"
             className="hero-img"
           />
           <img
-            src="/assets/besakhi3.png"
+            src="/assets/purple4.png"
             alt="Person 2"
             className="hero-img"
           />
@@ -106,12 +106,12 @@ const Hero = () => {
         {/* Right side images */}
         <div className="right-images" ref={rightImagesRef}>
           <img
-            src="https://images.unsplash.com/photo-1518600506278-4e8ef466b810?w=400&h=400&fit=crop"
+            src="/assets/travel1.png"
             alt="Person 3"
             className="hero-img"
           />
           <img
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop"
+            src="/assets/purple5.png"
             alt="Person 4"
             className="hero-img"
           />
