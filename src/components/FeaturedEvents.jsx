@@ -122,7 +122,7 @@ const FeaturedEvents = () => {
 
   // Handle search from navbar
   useEffect(() => {
-    // Check if there's a hash in URL (for direct navigation)
+    
     const hash = window.location.hash;
     if (hash && hash.includes('event-')) {
       const eventId = parseInt(hash.replace('#event-', ''));
@@ -163,7 +163,6 @@ const FeaturedEvents = () => {
     return () => window.removeEventListener('scrollToEvent', handleSearchEvent);
   }, []);
 
-  // Filter events - if selectedEventId exists, show only that event
   const displayEvents = selectedEventId 
     ? events.filter(event => event.id === selectedEventId)
     : events.filter((event) =>
@@ -190,7 +189,7 @@ const FeaturedEvents = () => {
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
-              setSelectedEventId(null); // Clear selected event when searching
+              setSelectedEventId(null); 
             }}
           />
         </div>
@@ -225,7 +224,7 @@ const FeaturedEvents = () => {
             </div>
           )}
           
-          {/* Back to all events button when showing single event */}
+       
           {selectedEventId && (
             <div className="eventify-back-btn-container">
               <button onClick={handleClearSearch} className="eventify-back-btn">

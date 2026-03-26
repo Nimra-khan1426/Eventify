@@ -61,7 +61,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Right Form - In Box */}
+        {/* Right Form  */}
         <div className="contact-form">
           <div className="form-wrapper">
             <h3>Send us a Message</h3>

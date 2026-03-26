@@ -469,7 +469,7 @@
     font-size: 10px;
   }
 
-  /* Email Input - Minimum size */
+ 
   .footer-signup input {
     padding: 8px 10px;
     font-size: 11px;
@@ -487,7 +487,7 @@
   }
 }
 
-/* Large Desktop (1440px and above) */
+
 @media (min-width: 1440px) {
   .footer {
     padding: 60px 100px;
@@ -532,7 +532,7 @@
   }
 }
 
-/* Dark Mode Support */
+
 @media (prefers-color-scheme: dark) {
   .footer {
     background: #0a0a0a;
@@ -547,16 +547,6 @@
   }
 }
 
-/* Touch Device Optimizations */
-@media (hover: none) and (pointer: coarse) {
-  .footer-signup button:active {
-    transform: scale(0.98);
-  }
-  
-  .social-icon:active {
-    transform: scale(0.95);
-  }
-}
 
 /* Smooth Scrolling */
 html {

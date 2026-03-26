@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Main Container - Using unique class names */
+/* Main Container  */
 .eventify-featured-section {
   position: relative;
   padding: 80px 50px;
@@ -25,7 +25,7 @@
   color: #1a1a2e;
 }
 
-/* Search Bar with Icon - Fully Responsive */
+/* Search Bar  */
 .eventify-search-bar {
   display: flex;
   align-items: center;
@@ -211,7 +211,7 @@
   background: black;
 }
 
-/* Button Ripple Effect */
+/* Button  */
 .eventify-btn::after {
   content: '';
   position: absolute;
@@ -319,7 +319,6 @@
   transform: translateX(-5px);
 }
 
-/* ========== RESPONSIVE DESIGN - SEARCH BAR OPTIMIZED ========== */
 
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
@@ -493,7 +492,7 @@
     font-size: 1.5rem;
   }
   
-  /* Search Bar - Smallest, Perfectly Centered */
+ 
   .eventify-search-bar {
     width: 220px;
     padding: 6px 12px;
