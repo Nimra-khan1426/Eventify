@@ -2,9 +2,9 @@
 
 A responsive, single-page web application for discovering and exploring local events. This project was developed as a case study for a Web Development position, demonstrating modern front-end development skills with React, interactive UI components, and a clean, mobile-friendly design.
 
-## ✨ Live Preview
+## Check out the live project here
 
-[View Live Project](eventify-yenu.vercel.app)
+[View Live Project](https://eventify-yenu.vercel.app/)
 
 ##  Features
 
