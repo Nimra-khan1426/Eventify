@@ -92,7 +92,7 @@ const Hero = () => {
         {/* Left side images */}
         <div className="left-images" ref={leftImagesRef}>
           <img
-            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop"
+            src="/assets/imagepsl1.png"
             alt="Person 1"
             className="hero-img"
           />
