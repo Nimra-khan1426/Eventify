@@ -192,7 +192,7 @@
   transform: translateY(-3px);
 }
 
-/* ========== RESPONSIVE DESIGN - EMAIL INPUT OPTIMIZED ========== */
+
 
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
@@ -290,7 +290,7 @@
   }
 }
 
-/* Mobile Landscape (480px - 576px) */
+
 @media (max-width: 576px) {
   .footer {
     padding: 30px 20px;
@@ -313,7 +313,7 @@
     font-size: 13px;
   }
 
-  /* Email Input - Better on Mobile */
+ 
   .footer-signup form {
     flex-direction: column;
     gap: 12px;
@@ -367,7 +367,7 @@
     font-size: 12px;
   }
 
-  /* Email Input - Perfect for small screens */
+
   .footer-signup {
     width: 100%;
   }

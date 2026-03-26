@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import "./Hero.css";
-import { ImTextColor } from "react-icons/im";
 
 const Hero = () => {
   // Refs for animation triggers

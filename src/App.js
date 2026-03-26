@@ -6,8 +6,6 @@ import Contact from './components/Contact';
 import Hero from './components/Hero';
 import { MdFeaturedPlayList } from 'react-icons/md';
 import FeaturedEvents from './components/FeaturedEvents';
-import CategoriesSection from './components/DiscoverEvents';
-import DiscoverEvents from './components/DiscoverEvents';
 
 function App() {
   return (
@@ -15,7 +13,6 @@ function App() {
      <Navbar />
       <main>
       <Hero />
-       <DiscoverEvents />
       <FeaturedEvents />
      <Contact />
       </main>
