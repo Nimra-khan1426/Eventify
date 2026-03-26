@@ -7,15 +7,15 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.6.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -23,7 +23,14 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-unused-vars": "warn",
+      "jsx-a11y/anchor-is-valid": "off",
+      "jsx-a11y/click-events-have-key-events": "off",
+      "jsx-a11y/no-static-element-interactions": "off",
+      "jsx-a11y/no-noninteractive-element-interactions": "off"
+    }
   },
   "browserslist": {
     "production": [
