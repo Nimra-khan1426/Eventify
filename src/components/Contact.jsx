@@ -45,16 +45,16 @@ const Contact = () => {
           <div className="social-icons-container">
             <h4>Follow Us</h4>
             <div className="social-icons">
-              <a href="#" className="social-icon-circle" aria-label="Facebook">
+              <a href="" className="social-icon-circle" aria-label="Facebook">
                 <FaFacebookF />
               </a>
-              <a href="#" className="social-icon-circle" aria-label="Twitter">
+              <a href="" className="social-icon-circle" aria-label="Twitter">
                 <FaTwitter />
               </a>
-              <a href="#" className="social-icon-circle" aria-label="Instagram">
+              <a href="" className="social-icon-circle" aria-label="Instagram">
                 <FaInstagram />
               </a>
-              <a href="#" className="social-icon-circle" aria-label="LinkedIn">
+              <a href="" className="social-icon-circle" aria-label="LinkedIn">
                 <FaLinkedinIn />
               </a>
             </div>

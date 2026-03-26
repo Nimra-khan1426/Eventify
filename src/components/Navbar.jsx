@@ -88,9 +88,9 @@ const Navbar = () => {
 
       {/* Links */}
       <ul className={`nav-links ${menuOpen ? "active" : ""}`} ref={menuRef}>
-        <li onClick={() => scrollToSection("home")}>Home</li>
-        <li onClick={() => scrollToSection("events")}>Events</li>
-        <li onClick={() => scrollToSection("contact")}>Contact</li>
+        <li onClick={() => scrollToSection("$home")}>Home</li>
+        <li onClick={() => scrollToSection("#events")}>Events</li>
+        <li onClick={() => scrollToSection("#contact")}>Contact</li>
       </ul>
 
       {/* Right Side */}
