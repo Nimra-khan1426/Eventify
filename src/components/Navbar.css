@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,600&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #0d0d0d;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  z-index: 100;
+}
+
+/* Logo */
+.logo {
+  font-size: 26px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+
+.nav-links li {
+  cursor: pointer;
+  color: #ffffff;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover animation underline */
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: purple;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links li:hover {
+  color: purple;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+/* Right section */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 200;
+}
+
+/* Search */
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  padding: 10px 40px 10px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background: #1a1a1a;
+  color: white;
+  width: 260px;
+  transition: all 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: #aaa;
+}
+
+.nav-search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color:white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-search-icon:hover {
+  color: #a855f7;
+}
+
+/* Hamburger */
+.menu-icon {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding-top: 10px;
+}
+
+.menu-icon:hover {
+  color: #a855f7;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  /* NAV DROPDOWN */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #0d0d0d;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links.active {
+    max-height: 250px;
+    padding: 20px 0;
+  }
+
+  /* HAMBURGER */
+  .menu-icon {
+    display: block;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+    z-index: 200;
+  }
+
+  /* RIGHT SECTION */
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* SEARCH BOX - Mobile */
+  .search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-box input {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    opacity: 0;
+    padding: 8px 0;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: #1a1a1a;
+    pointer-events: none;
+  }
+
+  .search-box.active input {
+    width: 180px;
+    opacity: 1;
+    padding: 8px 35px 8px 15px;
+    pointer-events: auto;
+  }
+
+  .nav-search-icon {
+    position: relative;
+    right: 0;
+    transform: none;
+    z-index: 2;
+    font-size: 18px;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+
+  .search-box.active input {
+    width: 90px;  
+    padding: 5px 28px 5px 10px;
+    font-size: 11px;
+    right: 23px;
+  }
+
+  .search-box.active input::placeholder {
+    font-size: 10px;
+  }
+
+}
+
+/* SEARCH DROPDOWN */
+.search-dropdown {
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  background: #1a1a1a;
+  padding: 5px 0;
+  margin: 0;
+  z-index: 999;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.search-dropdown li {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s;
+}
+
+.search-dropdown li:hover {
+  background: #2a2a2a;
+  color: purple;
+}

@@ -1,0 +1,678 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Main Container - Using unique class names */
+.eventify-featured-section {
+  position: relative;
+  padding: 80px 50px;
+  background: #fefefc;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Heading + Search Row */
+.eventify-featured-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.eventify-featured-top h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #1a1a2e;
+}
+
+/* Search Bar with Icon - Fully Responsive */
+.eventify-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border-radius: 50px;
+  padding: 9px 15px;
+  min-width: 280px;
+  width: auto;
+  max-width: 100%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  flex-direction: row-reverse;
+}
+
+.eventify-search-icon {
+  color: black;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.eventify-search-icon:hover {
+  color: purple;
+}
+
+.eventify-search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #1a1a2e;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  padding: 0 5px;
+  min-width: 0;
+  width: 100%;
+}
+
+.eventify-search-bar input::placeholder {
+  color: gray;
+}
+
+/* Events Grid */
+.eventify-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+/* Event Card */
+.eventify-event-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  transition: none;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+}
+
+/* Image Box */
+.eventify-img-box {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Image */
+.eventify-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: none;
+}
+
+/* Image Counter */
+.eventify-image-counter {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-family: "Poppins", sans-serif;
+  z-index: 2;
+}
+
+/* Content */
+.eventify-content {
+  padding: 16px 18px 18px 18px;
+  text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: none;
+  height: calc(380px - 180px);
+  overflow: hidden;
+}
+
+/* Content Top Section */
+.eventify-content-top {
+  flex: 1;
+  overflow: hidden;
+}
+
+.eventify-content h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  color: #1a1a2e;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: none;
+}
+
+/* Meta Info */
+.eventify-meta {
+  font-size: 0.85rem;
+  color: gray;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  transition: none;
+}
+
+.eventify-meta svg {
+  color: black;
+  flex-shrink: 0;
+  transition: none;
+}
+
+/* Description */
+.eventify-desc {
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: none;
+}
+
+/* Button */
+.eventify-btn {
+  margin-top: 12px;
+  padding: 8px 18px;
+  background: purple;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  width: fit-content;
+  align-self: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.eventify-btn:hover {
+  background: black;
+}
+
+/* Button Ripple Effect */
+.eventify-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.eventify-btn:active::after {
+  width: 100px;
+  height: 100px;
+}
+
+/* No Events Message */
+.eventify-no-events {
+  text-align: center;
+  font-size: 1.2rem;
+  color: gray;
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  padding: 40px;
+}
+
+/* Results Count */
+.eventify-results-count {
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+  color: #666;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Loading Spinner */
+.eventify-loading-spinner {
+  text-align: center;
+  padding: 40px;
+}
+
+.eventify-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 15px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid purple;
+  border-radius: 50%;
+  animation: eventify-spin 1s linear infinite;
+}
+
+@keyframes eventify-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Clear Search Button */
+.eventify-clear-search-btn {
+  margin-top: 10px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid purple;
+  color: purple;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.eventify-clear-search-btn:hover {
+  background: purple;
+  color: white;
+}
+
+/* Back Button Container */
+.eventify-back-btn-container {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.eventify-back-btn {
+  background: transparent;
+  border: 2px solid purple;
+  color: purple;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eventify-back-btn:hover {
+  background: purple;
+  color: white;
+  transform: translateX(-5px);
+}
+
+/* ========== RESPONSIVE DESIGN - SEARCH BAR OPTIMIZED ========== */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .eventify-featured-section {
+    padding: 70px 30px;
+  }
+  
+  .eventify-search-bar {
+    min-width: 260px;
+  }
+  
+  .eventify-events-grid {
+    gap: 20px;
+  }
+  
+  .eventify-event-card {
+    height: 370px;
+  }
+  
+  .eventify-content {
+    height: calc(370px - 180px);
+  }
+}
+
+/* Mobile Landscape (576px - 768px) */
+@media (max-width: 768px) {
+  .eventify-featured-section {
+    padding: 60px 20px;
+  }
+
+  .eventify-featured-top {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 25px;
+  }
+  
+  .eventify-featured-top h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  /* Search Bar - Smaller and Centered */
+  .eventify-search-bar {
+    width: 280px;
+    min-width: auto;
+    padding: 8px 15px;
+    margin: 0 auto;
+    flex-direction: row-reverse;
+  }
+  
+  .eventify-search-icon {
+    font-size: 1rem;
+  }
+  
+  .eventify-search-bar input {
+    font-size: 0.9rem;
+  }
+  
+  .eventify-search-bar input::placeholder {
+    font-size: 0.85rem;
+  }
+  
+  .eventify-events-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+  }
+  
+  .eventify-event-card {
+    height: 360px;
+  }
+  
+  .eventify-img-box,
+  .eventify-img {
+    height: 160px;
+  }
+  
+  .eventify-content {
+    height: calc(360px - 160px);
+    padding: 14px 16px 16px 16px;
+  }
+}
+
+/* Mobile Portrait (480px - 576px) */
+@media (max-width: 576px) {
+  .eventify-featured-section {
+    padding: 50px 16px;
+  }
+  
+  .eventify-featured-top h2 {
+    font-size: 1.8rem;
+  }
+  
+  /* Search Bar - Even Smaller and Centered */
+  .eventify-search-bar {
+    width: 260px;
+    padding: 7px 14px;
+    gap: 8px;
+  }
+  
+  .eventify-search-icon {
+    font-size: 0.95rem;
+  }
+  
+  .eventify-search-bar input {
+    font-size: 0.85rem;
+  }
+  
+  .eventify-search-bar input::placeholder {
+    font-size: 0.8rem;
+  }
+  
+  .eventify-events-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .eventify-event-card {
+    height: auto;
+    min-height: 340px;
+  }
+  
+  .eventify-img-box,
+  .eventify-img {
+    height: 150px;
+  }
+  
+  .eventify-content {
+    height: auto;
+    min-height: 190px;
+    padding: 12px 14px 14px 14px;
+  }
+  
+  .eventify-content h3 {
+    font-size: 1rem;
+  }
+  
+  .eventify-meta {
+    font-size: 0.75rem;
+    gap: 6px;
+  }
+  
+  .eventify-desc {
+    font-size: 0.8rem;
+  }
+  
+  .eventify-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+  
+  .eventify-back-btn {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .eventify-featured-section {
+    padding: 40px 12px;
+  }
+  
+  .eventify-featured-top {
+    gap: 18px;
+  }
+  
+  .eventify-featured-top h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Search Bar - Smallest, Perfectly Centered */
+  .eventify-search-bar {
+    width: 220px;
+    padding: 6px 12px;
+    gap: 6px;
+  }
+  
+  .eventify-search-icon {
+    font-size: 0.85rem;
+  }
+  
+  .eventify-search-bar input {
+    font-size: 0.8rem;
+  }
+  
+  .eventify-search-bar input::placeholder {
+    font-size: 0.75rem;
+  }
+  
+  .eventify-events-grid {
+    gap: 14px;
+  }
+  
+  .eventify-img-box,
+  .eventify-img {
+    height: 140px;
+  }
+  
+  .eventify-content {
+    padding: 10px 12px 12px 12px;
+  }
+  
+  .eventify-content h3 {
+    font-size: 0.95rem;
+  }
+  
+  .eventify-meta {
+    font-size: 0.7rem;
+    gap: 5px;
+  }
+  
+  .eventify-desc {
+    font-size: 0.75rem;
+  }
+  
+  .eventify-btn {
+    padding: 5px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .eventify-back-btn {
+    padding: 6px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small Mobile (below 360px) */
+@media (max-width: 360px) {
+  .eventify-featured-section {
+    padding: 35px 10px;
+  }
+  
+  .eventify-featured-top h2 {
+    font-size: 2rem;
+  }
+  
+  /* Search Bar - Minimum Size */
+  .eventify-search-bar {
+    width: 200px;
+    padding: 5px 10px;
+    gap: 5px;
+  }
+  
+  .eventify-search-icon {
+    font-size: 0.8rem;
+  }
+  
+  .eventify-search-bar input {
+    font-size: 0.75rem;
+  }
+  
+  .eventify-search-bar input::placeholder {
+    font-size: 0.7rem;
+  }
+  
+  .eventify-img-box,
+  .eventify-img {
+    height: 130px;
+  }
+  
+  .eventify-content {
+    padding: 8px 10px 10px 10px;
+  }
+  
+  .eventify-content h3 {
+    font-size: 0.9rem;
+  }
+  
+  .eventify-meta {
+    font-size: 0.65rem;
+    gap: 4px;
+  }
+  
+  .eventify-desc {
+    font-size: 0.7rem;
+  }
+  
+  .eventify-btn {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Desktop Large (1440px and above) */
+@media (min-width: 1440px) {
+  .eventify-featured-section {
+    padding: 100px 80px;
+  }
+  
+  .eventify-featured-top h2 {
+    font-size: 3rem;
+  }
+  
+  .eventify-search-bar {
+    min-width: 380px;
+    padding: 12px 20px;
+  }
+  
+  .eventify-search-icon {
+    font-size: 1.3rem;
+  }
+  
+  .eventify-search-bar input {
+    font-size: 1.05rem;
+  }
+  
+  .eventify-events-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+  }
+  
+  .eventify-event-card {
+    height: 400px;
+  }
+  
+  .eventify-img-box,
+  .eventify-img {
+    height: 200px;
+  }
+  
+  .eventify-content {
+    height: calc(400px - 200px);
+    padding: 18px 20px 20px 20px;
+  }
+  
+  .eventify-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .eventify-btn::after {
+    display: none;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .eventify-search-icon:active {
+    color: purple;
+  }
+  
+  .eventify-btn:active {
+    background: black;
+    transform: scale(0.98);
+  }
+  
+  .eventify-back-btn:active {
+    background: purple;
+    color: white;
+  }
+}

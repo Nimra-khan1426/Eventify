@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+.discover-section {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 60px 24px;
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* Text Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Heading Animation */
+.discover-heading {
+  font-size: clamp(20px, 3vw, 40px);
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 8px;
+  font-style: normal;
+  letter-spacing: -0.3px;
+  opacity: 0;
+}
+
+.discover-heading.animate-text {
+  animation: slideInLeft 0.6s ease forwards;
+}
+
+.discover-heading span {
+  color: purple;
+  position: relative;
+  display: inline-block;
+}
+
+/* Subtitle Animation */
+.discover-sub {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 48px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+
+.discover-sub.animate-text-delay {
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* Wrapper Container */
+.discover-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Row Styles */
+.discover-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 780px;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+/* Category Item */
+.cat-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 8px 12px;
+  border-radius: 40px;
+  background: transparent;
+  position: relative;
+}
+
+/* Animation trigger on scroll */
+.cat-item.animate {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+/* Hover Effects */
+.cat-item:hover {
+  opacity: 1 !important;
+  transform: translateY(-2px);
+}
+
+.cat-item:hover .cat-icon {
+  color: black;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.cat-item:hover .cat-label {
+  color: purple;
+}
+
+/* Active/Pressed State */
+.cat-item:active {
+  transform: scale(0.98);
+}
+
+/* Icon Styles */
+.cat-icon {
+  display: flex;
+  align-items: center;
+  color: purple;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cat-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.8;
+}
+
+/* Label Styles */
+.cat-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .discover-section {
+    padding: 50px 20px;
+  }
+
+  .discover-heading {
+    font-size: clamp(18px, 4vw, 24px);
+    margin-bottom: 6px;
+  }
+
+  .discover-sub {
+    font-size: 12px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .discover-wrapper {
+    gap: 20px;
+  }
+
+  .discover-row {
+    max-width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .cat-item {
+    padding: 6px 10px;
+    white-space: normal;
+  }
+
+  .cat-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .cat-label {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 580px) {
+  .discover-section {
+    padding: 40px 16px;
+  }
+
+  .discover-sub {
+    font-size: 11px;
+    margin-bottom: 32px;
+  }
+
+  .discover-wrapper {
+    gap: 16px;
+  }
+
+
+  .discover-row {
+    gap: 15px;
+  }
+   .discover-heading{
+    font-size: 2rem;
+  }
+
+  .cat-item {
+    padding: 5px 8px;
+    gap: 6px;
+  }
+
+  .cat-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .cat-label {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .discover-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .discover-heading{
+    font-size: 2rem;
+  }
+
+  .cat-item {
+    justify-content: center;
+    padding: 12px 16px;
+    background: #f9f9f9;
+    border-radius: 12px;
+  }
+
+  .cat-item:hover {
+    background: #f3f0ff;
+    transform: translateY(-2px);
+  }
+
+  .cat-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cat-label {
+    font-size: 12px;
+  }
+}
+
+/* Tablet Landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .discover-row {
+    max-width: 680px;
+    gap: 25px;
+  }
+
+  .cat-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cat-label {
+    font-size: 14px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1440px) {
+  .discover-section {
+    padding: 80px 40px;
+  }
+
+  .discover-heading {
+    font-size: 40px;
+  }
+
+  .discover-sub {
+    font-size: 16px;
+    margin-bottom: 60px;
+  }
+
+  .discover-row {
+    max-width: 900px;
+    gap: 40px;
+  }
+
+  .cat-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .cat-label {
+    font-size: 17px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .cat-item,
+  .discover-heading,
+  .discover-sub {
+    animation: fadeIn 0.3s ease forwards !important;
+  }
+  
+  .cat-item:hover .cat-icon,
+  .cat-item:hover .cat-label {
+    transform: none;
+  }
+}
+
+/* Hover for touch devices */
+@media (hover: hover) {
+  .cat-item:hover {
+    opacity: 0.7 !important;
+  }
+}
+
+/* Focus styles for accessibility */
+.cat-item:focus-visible {
+  outline: 2px solid purple;
+  outline-offset: 2px;
+  border-radius: 40px;
+  opacity: 1;
+}
