@@ -1,14 +1,29 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Hero.css";
 
 const Hero = () => {
-  // Refs for animation triggers
   const contentRef = useRef(null);
-  const leftImagesRef = useRef(null);
-  const rightImagesRef = useRef(null);
+  
+  // Slideshow images array
+  const slideshowImages = [
+    "/assets/travel1.png",
+    "/assets/food1.png",
+    "/assets/imagepsl1.png",
+    "/assets/travel3.png",
+  ];
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Auto-slide every 4 seconds
   useEffect(() => {
-    // Intersection Observer for entrance animations
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % slideshowImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [slideshowImages.length]);
+
+  // Entrance animation
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -21,15 +36,27 @@ const Hero = () => {
     );
 
     if (contentRef.current) observer.observe(contentRef.current);
-    if (leftImagesRef.current) observer.observe(leftImagesRef.current);
-    if (rightImagesRef.current) observer.observe(rightImagesRef.current);
 
     return () => observer.disconnect();
   }, []);
 
   return (
     <section className="hero" id="home">
-      {/* Responsive wavy pattern background */}
+      {/* Background Slideshow */}
+      <div className="hero-background-slideshow">
+        {slideshowImages.map((img, index) => (
+          <div
+            key={index}
+            className={`bg-slide ${index === currentImageIndex ? "active" : ""}`}
+          >
+            <img src={img} alt={`Event ${index + 1}`} />
+          </div>
+        ))}
+        {/* Overlay gradient to make text readable */}
+        <div className="bg-overlay"></div>
+      </div>
+
+      {/* Wavy background elements */}
       <div className="hero-bg-waves">
         <div className="wave-svg wave-1">
           <svg
@@ -39,7 +66,7 @@ const Hero = () => {
           >
             <path
               fill="#9b4dcc"
-              fillOpacity="0.2"
+              fillOpacity="0.3"
               d="M0,192L48,197.3C96,203,192,213,288,208C384,203,480,181,576,186.7C672,192,768,224,864,229.3C960,235,1056,213,1152,192C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
             ></path>
           </svg>
@@ -65,20 +92,21 @@ const Hero = () => {
           >
             <path
               fill="#c08ef0"
-              fillOpacity="0.15"
+              fillOpacity="0.2"
               d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,229.3C672,235,768,213,864,192C960,171,1056,149,1152,149.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
             ></path>
           </svg>
         </div>
       </div>
 
+      {/* Content */}
       <div className="hero-content" ref={contentRef}>
         <h1>
-  Discover <span style={{ color: "purple", fontStyle: "italic" }}>
-    Events
-    <br /> Near
-  </span> You!
-</h1>
+          Discover <span style={{ color: "purple", fontStyle: "italic" }}>
+            Events
+            <br /> Near
+          </span> You!
+        </h1>
         <p>
           Uncover hidden gems and exciting events nearby.<br />
           Join the fun and meet new people today
@@ -86,36 +114,6 @@ const Hero = () => {
         <a href="http://localhost:3000/#events" className="hero-btn">
           Discover Events
         </a>
-      </div>
-
-      <div className="hero-images">
-        {/* Left side images */}
-        <div className="left-images" ref={leftImagesRef}>
-          <img
-            src="/assets/purple1.png"
-            alt="Person 1"
-            className="hero-img"
-          />
-          <img
-            src="/assets/purple4.png"
-            alt="Person 2"
-            className="hero-img"
-          />
-        </div>
-
-        {/* Right side images */}
-        <div className="right-images" ref={rightImagesRef}>
-          <img
-            src="/assets/travel1.png"
-            alt="Person 3"
-            className="hero-img"
-          />
-          <img
-            src="/assets/purple5.png"
-            alt="Person 4"
-            className="hero-img"
-          />
-        </div>
       </div>
     </section>
   );

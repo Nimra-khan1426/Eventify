@@ -139,7 +139,7 @@ const FeaturedEvents = () => {
     }
   }, []);
 
-  // Listen for custom event from navbar
+ 
   useEffect(() => {
     const handleSearchEvent = (event) => {
       const { eventId } = event.detail;
@@ -147,7 +147,7 @@ const FeaturedEvents = () => {
         setSelectedEventId(eventId);
         setSearch("");
         
-        // Scroll to the event card
+        
         setTimeout(() => {
           const element = document.getElementById(`event-${eventId}`);
           if (element) {
@@ -217,12 +217,6 @@ const FeaturedEvents = () => {
             )}
           </div>
           
-          {/* Results count */}
-          {displayEvents.length > 0 && !selectedEventId && (
-            <div className="eventify-results-count">
-              Showing {displayEvents.length} of {events.length} events
-            </div>
-          )}
           
        
           {selectedEventId && (
