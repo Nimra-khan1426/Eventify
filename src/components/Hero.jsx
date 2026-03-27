@@ -111,7 +111,7 @@ const Hero = () => {
           Uncover hidden gems and exciting events nearby.<br />
           Join the fun and meet new people today
         </p>
-        <a href="http://localhost:3000/#events" className="hero-btn">
+        <a href="#events" className="hero-btn">
           Discover Events
         </a>
       </div>

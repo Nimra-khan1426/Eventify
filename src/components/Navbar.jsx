@@ -10,6 +10,14 @@ const Navbar = () => {
   const [filteredEvents, setFilteredEvents] = useState([]);
   const searchRef = useRef(null);
   const menuRef = useRef(null);
+  const inputRef = useRef(null);
+const dropdownRef = useRef(null);
+useEffect(() => {
+  if (inputRef.current && dropdownRef.current) {
+    const width = inputRef.current.offsetWidth;
+    dropdownRef.current.style.width = width + "px";
+  }
+}, [searchOpen, query]);
 
   useEffect(() => {
     if (query.trim()) {
@@ -117,12 +125,13 @@ const Navbar = () => {
         {/* Search Box */}
         <div className={`search-box ${searchOpen ? "active" : ""}`} ref={searchRef}>
           <input
-            type="text"
-            placeholder="Search events..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onFocus={() => setSearchOpen(true)}
-          />
+  ref={inputRef}
+  type="text"
+  placeholder="Search events..."
+  value={query}
+  onChange={(e) => setQuery(e.target.value)}
+  onFocus={() => setSearchOpen(true)}
+/>
           <FaSearch
             className="nav-search-icon"
             onClick={() => setSearchOpen(!searchOpen)}
@@ -130,7 +139,7 @@ const Navbar = () => {
 
           {/* Dropdown Results */}
           {query && searchOpen && (
-            <ul className="search-dropdown">
+            <ul className="search-dropdown" ref={dropdownRef}>
               {filteredEvents.length > 0 ? (
                 filteredEvents.map((event) => (
                   <li

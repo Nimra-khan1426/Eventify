@@ -2,17 +2,16 @@
 
 .navbar {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 40px;
-  background: #0d0d0d;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-  z-index: 100;
+ align-items: center;
+ justify-content: space-between;
+ padding: 15px 40px;
+ background: #0d0d0d;
+ color: white;
+ font-family: 'Poppins', sans-serif;
+ position: relative;
+ z-index: 100;
 }
 
-/* Logo */
 .logo {
   font-size: 26px;
   font-weight: 600;
@@ -20,7 +19,6 @@
   display: flex;
 }
 
-/* Links */
 .nav-links {
   display: flex;
   gap: 35px;
@@ -35,7 +33,6 @@
   transition: 0.3s;
 }
 
-/* Hover animation underline */
 .nav-links li::after {
   content: "";
   position: absolute;
@@ -55,7 +52,6 @@
   width: 100%;
 }
 
-/* Right section */
 .right-section {
   display: flex;
   align-items: center;
@@ -64,9 +60,9 @@
   z-index: 200;
 }
 
-/* Search */
 .search-box {
   position: relative;
+  width: fit-content;
 }
 
 .search-box input {
@@ -78,10 +74,14 @@
   color: white;
   width: 260px;
   transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
 }
 
 .search-box input::placeholder {
   color: #aaa;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
 }
 
 .nav-search-icon {
@@ -89,7 +89,7 @@
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color:white;
+  color: white;
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -98,7 +98,6 @@
   color: #a855f7;
 }
 
-/* Hamburger */
 .menu-icon {
   display: none;
   font-size: 22px;
@@ -111,13 +110,53 @@
   color: #a855f7;
 }
 
-/* Mobile Responsive */
+
+.search-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%; 
+  min-width: unset;
+  background: #1a1a1a;
+  border-radius: 8px;
+  max-height: 200px;
+  z-index: 999;
+  overflow-y: auto;
+  scrollbar-width: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.search-dropdown li {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  list-style: none;
+}
+
+.search-dropdown li:hover {
+  background: #2a2a2a;
+  color: purple;
+}
+
+.search-dropdown::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
   }
 
-  /* NAV DROPDOWN */
   .nav-links {
     position: absolute;
     top: 70px;
@@ -140,7 +179,6 @@
     padding: 20px 0;
   }
 
-  /* HAMBURGER */
   .menu-icon {
     display: block;
     font-size: 22px;
@@ -149,14 +187,12 @@
     z-index: 200;
   }
 
-  /* RIGHT SECTION */
   .right-section {
     display: flex;
     align-items: center;
     gap: 15px;
   }
 
-  /* SEARCH BOX - Mobile */
   .search-box {
     position: relative;
     display: flex;
@@ -175,6 +211,8 @@
     transition: all 0.3s ease;
     background: #1a1a1a;
     pointer-events: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
   }
 
   .search-box.active input {
@@ -182,6 +220,11 @@
     opacity: 1;
     padding: 8px 35px 8px 15px;
     pointer-events: auto;
+    font-size: 12px;
+  }
+
+  .search-box.active input::placeholder {
+    font-size: 12px;
   }
 
   .nav-search-icon {
@@ -191,48 +234,136 @@
     z-index: 2;
     font-size: 18px;
   }
+
+ 
+  .search-dropdown {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    left: auto;
+    width: 180px; 
+    background: #1a1a1a;
+    border-radius: 8px;
+    max-height: 200px;
+    z-index: 999;
+    overflow-y: auto;
+    scrollbar-width: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .search-dropdown li {
+    padding: 8px 15px;
+    cursor: pointer;
+    color: white;
+    transition: 0.2s;
+    white-space: nowrap;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+
+  .search-dropdown li:hover {
+    background: #2a2a2a;
+    color: purple;
+  }
 }
 
 
-
 @media (max-width: 480px) {
-
   .search-box.active input {
-    width: 90px;  
-    padding: 5px 28px 5px 10px;
+    width: 100px;
+    padding: 6px 28px 6px 10px;
     font-size: 11px;
     right: 23px;
   }
 
   .search-box.active input::placeholder {
-    font-size: 10px;
+    font-size: 11px;
   }
 
-}
-
-/* SEARCH DROPDOWN */
-.search-dropdown {
-  position: absolute;
-  top: 45px;
+  .search-dropdown {
+    width: 100%;   
+    right: 25px;
+    left: auto;
+    
+  }
+  .search-dropdown li {
+  display: block;
   width: 100%;
-  background: #1a1a1a;
-  padding: 5px 0;
-  margin: 0;
-  z-index: 999;
-  max-height: 200px;
-  overflow-y: auto;
-  border-radius: 5px;
-  font-size: 12px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+     
+  
+
+  .search-dropdown li {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
 }
 
-.search-dropdown li {
-  padding: 10px 15px;
-  cursor: pointer;
-  color: white;
-  transition: 0.2s;
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .search-box input {
+    width: 220px;
+    font-size: 13px;
+  }
+  
+  .search-box input::placeholder {
+    font-size: 13px;
+  }
+  
+  .search-dropdown li {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+  .search-dropdown {
+    width: 100%;   
+    right: 40px;
+    left: auto;
+    
+    
+  }
+  .search-dropdown li {
+  display: block;
+  width: 100%;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 }
 
-.search-dropdown li:hover {
-  background: #2a2a2a;
-  color: purple;
+
+@media (min-width: 1440px) {
+  .search-box input {
+    width: 300px;
+    font-size: 15px;
+  }
+  
+  .search-box input::placeholder {
+    font-size: 15px;
+  }
+  
+  .search-dropdown li {
+    font-size: 15px;
+    padding: 12px 18px;
+  }
+  .search-dropdown li {
+  display: block;
+  width: 100%;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ 
+  
 }
